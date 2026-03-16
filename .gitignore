@@ -1,0 +1,20 @@
+# Python artifacts
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+venv/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Data directories
+data/vector_db/
+
+# Logs
+*.log
+
+# Render build artifacts
+.env
