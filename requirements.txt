@@ -8,6 +8,6 @@ langchain-core
 langchain-text-splitters
 langchain-groq
 chromadb
-sentence-transformers
+requests
 pypdf
 python-dotenv

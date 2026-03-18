@@ -10,9 +10,10 @@ def get_vector_db():
 
     if vector_db is None:
         from langchain_community.vectorstores import Chroma
-        from langchain_community.embeddings import HuggingFaceEmbeddings
+        from langchain_community.embeddings import HuggingFaceInferenceAPIEmbeddings
 
-        embeddings = HuggingFaceEmbeddings(
+        embeddings = HuggingFaceInferenceAPIEmbeddings(
+            api_key=os.getenv("HF_API_KEY"),
             model_name="sentence-transformers/all-MiniLM-L6-v2"
         )
 
