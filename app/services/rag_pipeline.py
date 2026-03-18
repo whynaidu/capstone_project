@@ -1,6 +1,4 @@
 import os
-from app.services.vector_store import get_vector_db
-from langchain_groq import ChatGroq
 
 llm = None
 
@@ -9,6 +7,8 @@ def get_llm():
     global llm
 
     if llm is None:
+        from langchain_groq import ChatGroq
+
         llm = ChatGroq(
             api_key=os.getenv("GROQ_API_KEY"),
             model="llama-3.1-8b-instant"
@@ -18,6 +18,8 @@ def get_llm():
 
 
 def ask_question(question):
+    from app.services.vector_store import get_vector_db
+
     db = get_vector_db()
     docs = db.similarity_search(question, k=3)
 
